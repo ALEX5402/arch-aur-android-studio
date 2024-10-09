@@ -1,4 +1,4 @@
-name: auto-snapshot
+name: auto-build
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Pull Arch Linux Docker image
-        run: docker pull alex5402/archlinux:latest
+        run: docker pull archlinux:latest
 
       - name: Building package
         run: |
