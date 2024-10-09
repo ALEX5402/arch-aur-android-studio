@@ -1,16 +1,5 @@
-# Contributor:  danyf90 <daniele.formichelli@gmail.com>
-# Contributor: Philipp 'TamCore' B. <philipp [at] tamcore [dot] eu>
-# Contributor: Jakub Schmidtke <sjakub-at-gmail-dot-com>
-# Contributor: Christoph Brill <egore911-at-gmail-dot-com>
-# Contributor: Lubomir 'Kuci' Kucera <kuci24-at-gmail-dot-com>
-# Contributor: Tad Fisher <tadfisher at gmail dot com>
-# Contributor: Philippe Hürlimann <p@hurlimann.org>
-# Contributor: Julian Raufelder <aur@raufelder.com>
-# Contributor: Dhina17 <dhinalogu@gmail.com>
-# Maintainer: Kordian Bruck <k@bruck.me>
-
-pkgname=android-studio
-pkgver=2024.1.1.11
+pkgname=android-studio-alex
+pkgver=2024.2.1.9
 pkgrel=1
 pkgdesc="The official Android IDE (Stable branch)"
 arch=('i686' 'x86_64')
@@ -25,8 +14,8 @@ options=('!strip')
 source=("https://dl.google.com/dl/android/studio/ide-zips/$pkgver/android-studio-$pkgver-linux.tar.gz"
         "$pkgname.desktop"
         "license.html")
-sha256sums=('d8fa8ecfe415b44513350901501e2a0f429ca033cf1805054b1c816c4a704565'
-            '73cd2dde1d0f99aaba5baad1e2b91c834edd5db3c817f6fb78868d102360d3c4'
+sha256sums=('d7ca6955e02fc71ea43413a348a7198db10c36df2484a9a884cab7244ad7ee96'
+            '137990860e6e54e815e3de47d2923f5e358364612bd61e0e479800f23dfe4612'
             '9a7563f7fb88c9a83df6cee9731660dc73a039ab594747e9e774916275b2e23e')
 
 if [ "$CARCH" = "i686" ]; then
@@ -34,12 +23,12 @@ if [ "$CARCH" = "i686" ]; then
 fi
 
 package() {
-  cd $srcdir/$pkgname
+  cd $srcdir/android-studio
 
   # Install the application
-  install -d $pkgdir/{opt/$pkgname,usr/bin}
-  cp -a bin lib jbr plugins license LICENSE.txt build.txt product-info.json $pkgdir/opt/$pkgname
-  ln -s /opt/android-studio/bin/studio.sh $pkgdir/usr/bin/$pkgname
+  install -d $pkgdir/{opt/android-studio,usr/bin}
+  cp -a bin lib jbr plugins license LICENSE.txt build.txt product-info.json $pkgdir/opt/android-studio
+  ln -s /opt/android-studio/bin/studio $pkgdir/usr/bin/$pkgname
 
   # Copy licenses
   install -Dm644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
@@ -50,4 +39,6 @@ package() {
   install -Dm644 $srcdir/$pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop
 
   chmod -R ugo+rX $pkgdir/opt
+
+
 }
