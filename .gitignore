@@ -1,6 +1,4 @@
-*
-!.gitignore
 .SRCINFO
-!PKGBUILD
-!license.html
 *.gz
+/src 
+

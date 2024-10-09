@@ -1,0 +1,20 @@
+[Desktop Entry]
+Categories=Development;IDE;
+Comment[en_US]=The official Android IDE
+Comment=The official Android IDE
+Exec=env QT_QPA_PLATFORM=xcb android-studio-alex %f
+GenericName[en_US]=Android Studio
+GenericName=Android Studio
+Icon=/usr/share/pixmaps/android-studio-alex.png
+MimeType=
+Name[en_US]=Android Studio
+Name=Android Studio
+Path=
+StartupNotify=true
+StartupWMClass=jetbrains-studio
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-KDE-SubstituteUID=false
+X-KDE-Username=
