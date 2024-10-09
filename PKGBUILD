@@ -24,21 +24,15 @@ fi
 
 package() {
   cd $srcdir/android-studio
-
   # Install the application
   install -d $pkgdir/{opt/android-studio,usr/bin}
   cp -a bin lib jbr plugins license LICENSE.txt build.txt product-info.json $pkgdir/opt/android-studio
   ln -s /opt/android-studio/bin/studio $pkgdir/usr/bin/$pkgname
-
   # Copy licenses
   install -Dm644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
   install -Dm644 $srcdir/license.html "${pkgdir}/usr/share/licenses/${pkgname}/license.html"
-
   # Add the icon and desktop file
   install -Dm644 bin/studio.png $pkgdir/usr/share/pixmaps/$pkgname.png
   install -Dm644 $srcdir/$pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop
-
   chmod -R ugo+rX $pkgdir/opt
-
-
 }

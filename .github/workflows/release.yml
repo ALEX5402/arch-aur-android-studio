@@ -3,7 +3,7 @@ name: auto-build
 on:
   push:
     branches:
-      - "*" # This triggers the workflow on any branch push
+      - "*"
 
 permissions:
   contents: write
