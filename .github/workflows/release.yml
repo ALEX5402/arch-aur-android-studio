@@ -49,11 +49,13 @@ jobs:
               # Ensure builder user has ownership of the workspace
               chown -R builder /workspace;
 
-             # Switch to the non-root user
+              # Switch to the non-root user
               sudo -u builder bash -c '
                 git config --global --add safe.directory /workspace;
                 makepkg -s --noconfirm;
                 cp *.pkg.tar.zst /workspace/
+              '
+            "
 
       - name: Release
         uses: softprops/action-gh-release@v2
