@@ -15,7 +15,7 @@ source=("https://dl.google.com/dl/android/studio/ide-zips/$pkgver/android-studio
         "$pkgname.desktop"
         "license.html")
 sha256sums=('d7ca6955e02fc71ea43413a348a7198db10c36df2484a9a884cab7244ad7ee96'
-            '137990860e6e54e815e3de47d2923f5e358364612bd61e0e479800f23dfe4612'
+            '51eb6978307c0785808758e174c024a82523ec1d6a5c9b8354f446467065caa6'
             '9a7563f7fb88c9a83df6cee9731660dc73a039ab594747e9e774916275b2e23e')
 
 if [ "$CARCH" = "i686" ]; then
